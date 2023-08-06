@@ -12,15 +12,7 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError('Error: Not Logged in!');
-        },
-        users: async () => {
-            return User.find().select("-__v -passowrd").populate('book');
-        },
-        user: async ({ username }) => {
-            return User.findOne({ username })
-                .select('-__v -password')
-                .populate('book');
-        },
+        }
     },
     Mutation: {
         addUser: async (parents, args) => {
@@ -46,7 +38,7 @@ const resolvers = {
             if (context.user) {
                 const savedBook = User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { savedBooks: {newBook} } },
+                    { $push: { savedBooks: newBook } },
                     { new: true }
                 );
                 return savedBook;
