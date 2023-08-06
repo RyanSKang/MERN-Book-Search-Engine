@@ -47,7 +47,7 @@ const resolvers = {
             if (context.user) {
                 const savedBook = User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { savedBooks: newBook } },
+                    { $push: { savedBooks: {newBook} } },
                     { new: true }
                 );
                 return savedBook;
