@@ -15,15 +15,23 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Creating an Apollo Server
-const server= new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware
-});
-
+// const server= new ApolloServer({
+//   typeDefs,
+//   resolvers,
+//   context: authMiddleware
+// });
 
 // Use Apollo server with Express application
-server.applyMiddleware({app});
+let apolloServer = null;
+async function startServer() {
+    apolloServer = new ApolloServer({
+        typeDefs,
+        resolvers,
+        context: authMiddleware
+    });
+    await apolloServer.start();
+    apolloServer.applyMiddleware({ app });
+}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
