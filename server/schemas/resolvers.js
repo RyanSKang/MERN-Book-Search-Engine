@@ -72,7 +72,7 @@ const resolvers = {
                     { $pull: { savedBooks: { bookId: args.bookId } } },
                     { new: true }
                 );
-                return removedBook;
+                return updatedUser;
             }
             throw new AuthenticationError('Must sign up or Log in!');
         }
