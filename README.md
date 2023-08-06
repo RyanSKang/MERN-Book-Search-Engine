@@ -57,9 +57,9 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 Git clone Repository: [Mern-Book-Search-Engine](https://https://github.com/RyanSKang/MERN-Book-Search-Engine.com/RyanSKang/NoSQL-API)  
 Following Installation Needed:   
     -Concurrently [v5.1.0](https://www.npmjs.com/package/concurrently/v/5.1.0)  
-    -Bootstrap [^5.2.3]()  
-    -Jwt-decode [^2.2.0]()  
-    -React [^16.13.1]()  
+    -Bootstrap [^5.2.3](https://www.npmjs.com/package/bootstrap/v/5.2.3)  
+    -Jwt-decode [^2.2.0](https://www.npmjs.com/package/jwt-decode/v/2.2.0)  
+    -React [^16.13.1](https://www.npmjs.com/package/react/v/16.13.1)  
     -React-bootstrap [^2.7.0]()  
     -React-dom [^16.13.1]()  
     -React-router-dom [v5.1.2]()  
