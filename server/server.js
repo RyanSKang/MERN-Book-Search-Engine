@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 // Importing ApolloServer and middleware function for Auth
-const { ApolloServer } = require('@apollo/server');
+const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 
 // Importing typeDefs and resolvers
@@ -15,23 +15,11 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Creating an Apollo Server
-// const server= new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   context: authMiddleware
-// });
-
-// Use Apollo server with Express application
-let apolloServer = null;
-async function startServer() {
-    apolloServer = new ApolloServer({
-        typeDefs,
-        resolvers,
-        context: authMiddleware
-    });
-    await apolloServer.start();
-    apolloServer.applyMiddleware({ app });
-}
+const server= new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware
+});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
