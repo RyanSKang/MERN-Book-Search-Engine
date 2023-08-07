@@ -56,19 +56,27 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ## Installation
 Git clone Repository: [Mern-Book-Search-Engine](https://https://github.com/RyanSKang/MERN-Book-Search-Engine.com/RyanSKang/NoSQL-API)  
 Following Installation Needed:   
-    -Concurrently [v5.1.0](https://www.npmjs.com/package/concurrently/v/5.1.0)  
-    -Bootstrap [^5.2.3](https://www.npmjs.com/package/bootstrap/v/5.2.3)  
-    -Jwt-decode [^2.2.0](https://www.npmjs.com/package/jwt-decode/v/2.2.0)  
-    -React [^16.13.1](https://www.npmjs.com/package/react/v/16.13.1)  
-    -React-bootstrap [^2.7.0]()  
-    -React-dom [^16.13.1]()  
-    -React-router-dom [v5.1.2]()  
-    -React-scripts [^5.0.1]()  
-    -Bcrypt [^5.0.0]()  
-    -Express [^4.17.1]()  
-    -Graphql [v15.5.0]()  
-    -Jsonwebtoken [^9.0.0]()  
-    -Mongoose [^7.0.2]()  
+    -@apollo/client [^3.7.17](https://www.npmjs.com/package/@apollo/client)  
+    -@apollo/react-hooks [^4.0.0](https://www.npmjs.com/package/@apollo/react-hooks)  
+    -@testing-library/jest-dom [^4.2.4](https://www.npmjs.com/package/@testing-library/jest-dom)    
+    -@testing-library/react [^9.3.2](https://www.npmjs.com/package/@testing-library/react)  
+    -@testing-library/user-event [^7.1.2](https://www.npmjs.com/package/@testing-library/user-event)  
+    -bootstrap [^5.2.3](https://www.npmjs.com/package/bootstrap)  
+    -graphql [^16.7.1](https://www.npmjs.com/package/graphql)  
+    -jwt-decode [^2.2.0](https://www.npmjs.com/package/jwt-decode)  
+    -react [^16.13.1](https://www.npmjs.com/package/react)  
+    -react-bootstrap [^2.7.0](https://www.npmjs.com/package/react-bootstrap)  
+    -react-dom [^16.13.1](https://www.npmjs.com/package/react-dom)  
+    -react-router-dom [^5.1.2](https://www.npmjs.com/package/react-router-dom)  
+    -react-scripts [^5.0.10](https://www.npmjs.com/package/react-scripts)  
+    -@apollo/server [^4.9.1](https://www.npmjs.com/package/@apollo/server)  
+    -bcrypt [^5.0.0](https://www.npmjs.com/package/bcrypt)  
+    -express [^4.17.](https://www.npmjs.com/package/express)  
+    -graphql [^16.7.](https://www.npmjs.com/package/graphql)  
+    -jsonwebtoken [^9.0.0](https://www.npmjs.com/package/jsonwebtoken)  
+    -mongoose [^7.0.2](https://www.npmjs.com/package/mongoose)      
+    -concurrently [^5.1.0](https://www.npmjs.com/package/concurrently)      
+    -apollo-boost [^0.4.9](https://www.npmjs.com/package/apollo-boost)  
    
 
 ## Usage Instructions
@@ -77,18 +85,22 @@ Following Installation Needed:
 3. On integrated terminal execute "npm start" and then an "npm run develop"  
 4. Server should start (Including the Homepage)  
 5. Access deployed application via Heroku:  
-    -<a href="">Heroku Deployed Application</a>
+    -<a href="https://mern-book-search-engine-ryans-bf5f87e59dcd.herokuapp.com/">Heroku Deployed Application</a>
   
 
 ## Screenshots
 ### Figure 1. Home Page
- 
-
-### Figure 2. Books Saved
-
-
-### Figure 3. View Saved Books
-
+ ![Screenshot 2023-08-06 at 6 04 20 PM](https://github.com/RyanSKang/MERN-Book-Search-Engine/assets/124969918/1d18b667-b6fb-4d34-9d1d-4a15bd60a9d0)  
+### Figure 2. Log in
+![Screenshot 2023-08-06 at 6 04 43 PM](https://github.com/RyanSKang/MERN-Book-Search-Engine/assets/124969918/326e4848-b4a7-4a62-9b8f-b3807b298251)  
+### Figure 3. Sign Up
+![Screenshot 2023-08-06 at 6 05 10 PM](https://github.com/RyanSKang/MERN-Book-Search-Engine/assets/124969918/f283451f-8064-4819-b467-a496287a3904)  
+### Figure 4. Searched Books
+![Screenshot 2023-08-06 at 6 05 39 PM](https://github.com/RyanSKang/MERN-Book-Search-Engine/assets/124969918/877d1b9e-91ac-4520-b705-110dbf479e18)  
+### Figure 5. Books Saved
+![Screenshot 2023-08-06 at 6 06 18 PM](https://github.com/RyanSKang/MERN-Book-Search-Engine/assets/124969918/f4a21a18-51f0-4982-9ef6-46afd7852fba)  
+### Figure 6. View Saved Books
+![Screenshot 2023-08-06 at 6 06 30 PM](https://github.com/RyanSKang/MERN-Book-Search-Engine/assets/124969918/ad5ec6f0-8344-4cc8-99a8-80e145a26a13)  
 
 
 
