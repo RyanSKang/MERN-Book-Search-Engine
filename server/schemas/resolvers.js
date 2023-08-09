@@ -40,42 +40,42 @@ const resolvers = {
             const token = await signToken(user);
             return { token, user };
         },
-        saveBook: async (parent, { newBook }, context) => {
+        saveBook: async (parent, { bookToSave }, context) => {
             console.log(newBook);
             console.log(context.user);
             if (context.user) {
                 const savedBook = User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { savedBooks: newBook } },
+                    { $push: { savedBooks: bookToSave } },
                     { new: true }
                 );
                 return savedBook;
             }
             throw new AuthenticationError('Must sign up or Log in!');
         },
-        removeBook: async (parent, args, context) => {
+        removeBook: async (parent, { bookId }, context) => {
             if (context.user) {
                 const removedBook = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedBooks: args } },
+                    { $pull: { savedBooks: bookId } },
                     { new: true }
                 );
                 return removedBook;
             }
             throw new AuthenticationError('Must sign up or Log in!');
-        },
-        removeBook: async (parent, args, context) => {
-            if (context.user) {
-                const updatedUser = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $pull: { savedBooks: { bookId: args.bookId } } },
-                    { new: true }
-                );
-                return updatedUser;
-            }
-            throw new AuthenticationError('Must sign up or Log in!');
         }
-    },
+        // removeBook: async (parent, args, context) => {
+        //     if (context.user) {
+        //         const updatedUser = await User.findByIdAndUpdate(
+        //             { _id: context.user._id },
+        //             { $pull: { savedBooks: { bookId: args.bookId } } },
+        //             { new: true }
+        //         );
+        //         return updatedUser;
+        //     }
+        //     throw new AuthenticationError('Must sign up or Log in!');
+        // }
+    }
 };
 
 module.exports =resolvers;
