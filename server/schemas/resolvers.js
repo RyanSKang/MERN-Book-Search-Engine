@@ -38,11 +38,12 @@ const resolvers = {
                 throw new AuthenticationError("Incorrect Username or Password");
             }
             const token = await signToken(user);
+            console.log(user, token)
             return { token, user };
         },
         saveBook: async (parent, { bookToSave }, context) => {
-            console.log(newBook);
-            console.log(context.user);
+            console.log('message', bookToSave);
+            // console.log(context);
             if (context.user) {
                 const savedBook = User.findByIdAndUpdate(
                     { _id: context.user._id },

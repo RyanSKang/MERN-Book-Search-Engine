@@ -25,7 +25,7 @@ const SearchBooks = () => {
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
-  const [saveBook, { error }] = useMutation(SAVE_BOOK, {
+  const [SaveBook, { error }] = useMutation(SAVE_BOOK, {
     update(cache, { data: {saveBook}}) {
     try{
       const {me}= cache.readQuery({
@@ -97,10 +97,10 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
-
+console.log(bookToSave)
     try {
-        await saveBook({
-        variables: { bookToSave }
+        await SaveBook({
+        variables: { bookToSave: { ...bookToSave } }
       });
 
       // if book successfully saves to user's account, save book id to state
