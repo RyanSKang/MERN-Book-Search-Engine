@@ -26,10 +26,11 @@ const typeDefs= gql`
         token: ID!
         user: User
     }
-    type Query{
+    type Query {
         me: User
         users: [User]
-    }
+        user(username: String!): User
+      }
     input bookInput{
         bookid: String!
         image: String
