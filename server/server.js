@@ -20,7 +20,7 @@ async function startServer() {
     apolloServer = new ApolloServer({
         typeDefs,
         resolvers,
-        context: authMiddleware,
+        context: authMiddleware
     });
     await apolloServer.start();
     apolloServer.applyMiddleware({ app });
@@ -34,7 +34,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
