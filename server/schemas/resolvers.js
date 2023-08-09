@@ -15,13 +15,13 @@ const resolvers = {
         },
         users: async () => {
             return User.find().select("-__v -password").populate("book");
-          },
-          user: async (parent, { username }) => {
-            return User.findOne({ username })
-              .select("-__v -password")
-              .populate("book");
-          },
         },
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+                .select("-__v -password")
+                .populate("book");
+        },
+    },
     Mutation: {
         addUser: async (parents, args) => {
             const user = await User.create(args);
@@ -43,7 +43,7 @@ const resolvers = {
         },
         saveBook: async (parent, { bookToSave }, context) => {
             console.log('message', bookToSave);
-            // console.log(context);
+            console.log(context.user, "User");
             if (context.user) {
                 const savedBook = User.findByIdAndUpdate(
                     { _id: context.user._id },
@@ -79,4 +79,4 @@ const resolvers = {
     }
 };
 
-module.exports =resolvers;
+module.exports = resolvers;
