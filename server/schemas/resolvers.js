@@ -53,16 +53,20 @@ const resolvers = {
             throw new AuthenticationError('Must sign up or Log in!');
         },
         removeBook: async (parent, { bookId }, context) => {
+            try{
             if (context.user) {
-                const removedBook = await User.findByIdAndUpdate(
+                const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedBooks: bookId } },
+                    { $pull: {savedBooks: { bookId: bookId}}},
                     { new: true }
                 );
-                return removedBook;
+                return updatedUser;
             }
-            throw new AuthenticationError('Must sign up or Log in!');
         }
+        catch (error){
+            console.error('Error fetching user Data', error);
+        }
+    }
         // removeBook: async (parent, args, context) => {
         //     if (context.user) {
         //         const updatedUser = await User.findByIdAndUpdate(
