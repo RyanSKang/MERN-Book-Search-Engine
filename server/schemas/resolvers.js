@@ -12,8 +12,16 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError('Error: Not Logged in!');
-        }
-    },
+        },
+        users: async () => {
+            return User.find().select("-__v -password").populate("book");
+          },
+          user: async (parent, { username }) => {
+            return User.findOne({ username })
+              .select("-__v -password")
+              .populate("book");
+          },
+        },
     Mutation: {
         addUser: async (parents, args) => {
             const user = await User.create(args);
